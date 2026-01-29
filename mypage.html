@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex,nofollow">
     <title>マイページ | HR DOC SUITE</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -14,7 +13,7 @@
         <div class="header-inner">
             <div class="logo">HR DOC SUITE</div>
             <div class="user-menu">
-                <span>契約中：スタンダードプラン</span>
+                <span class="user-name">株式会社サンプル 様</span>
                 <a href="index.html" class="btn-logout">ログアウト</a>
             </div>
         </div>
@@ -25,72 +24,155 @@
         <aside class="mypage-sidebar">
             <nav>
                 <ul>
-                    <li class="active">ホーム・契約状況</li>
-                    <li>ダウンロード</li>
-                    <li>アカウント設定</li>
-                    <li>お問い合わせ</li>
+                    <li class="active"><a href="#plan">契約プラン・金額</a></li>
+                    <li><a href="#account">アカウント情報</a></li>
+                    <li><a href="#history">申込・請求履歴</a></li>
+                    <li><a href="#download">ダウンロード</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
                 </ul>
             </nav>
         </aside>
 
         <main class="mypage-main">
             
-            <section class="backend-section">
-                <h3>ご契約プラン</h3>
-                <div class="plan-status-box">
-                    <div class="status-row">
-                        <span class="label">現在のプラン</span>
-                        <span class="value highlight">スタンダードプラン</span>
+            <section id="plan" class="backend-section">
+                <h3>現在のご契約内容</h3>
+                
+                <div class="plan-detail-box">
+                    <table class="backend-table">
+                        <thead>
+                            <tr>
+                                <th>プラン名</th>
+                                <th>内容概要</th>
+                                <th>価格（税込）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="highlight-text">スタンダードプラン</td>
+                                <td>テンプレート20種 / 月2回更新 / 相談可</td>
+                                <td>¥4,378</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 class="sub-heading">オプション契約</h4>
+                    <table class="backend-table">
+                        <thead>
+                            <tr>
+                                <th>オプション名</th>
+                                <th>内容</th>
+                                <th>価格（税込）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>-</td>
+                                <td>現在選択されているオプションはありません</td>
+                                <td>¥0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="total-price-area">
+                        <span class="total-label">合計月額（税込）</span>
+                        <span class="total-price">¥4,378</span>
                     </div>
-                    <div class="status-row">
-                        <span class="label">月額料金</span>
-                        <span class="value">3,980円（税込4,278円）</span>
-                    </div>
-                    <div class="status-row">
-                        <span class="label">次回更新日</span>
-                        <span class="value">2026年2月28日</span>
+                    
+                    <div class="plan-actions">
+                        <button class="btn-outline">プラン変更・解約はこちら</button>
                     </div>
                 </div>
             </section>
 
-            <section class="backend-section">
+            <section id="account" class="backend-section">
+                <h3>アカウント情報編集</h3>
+                <form class="account-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>会社名</label>
+                            <input type="text" value="株式会社サンプル" readonly class="input-readonly">
+                        </div>
+                        <div class="form-group">
+                            <label>担当者名</label>
+                            <input type="text" value="山田 太郎">
+                        </div>
+                        <div class="form-group">
+                            <label>メールアドレス</label>
+                            <input type="email" value="yamada@sample.co.jp">
+                        </div>
+                        <div class="form-group">
+                            <label>電話番号</label>
+                            <input type="tel" value="03-1234-5678">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>住所</label>
+                            <input type="text" value="東京都千代田区丸の内1-1-1">
+                        </div>
+                    </div>
+                    <button type="button" class="btn-backend-primary sm">変更を保存</button>
+                </form>
+            </section>
+
+            <section id="history" class="backend-section">
+                <h3>請求・申込履歴</h3>
+                <table class="backend-table striped">
+                    <thead>
+                        <tr>
+                            <th>決済日</th>
+                            <th>内容</th>
+                            <th>金額</th>
+                            <th>ステータス</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2026/01/25</td>
+                            <td>スタンダードプラン（2月分）</td>
+                            <td>¥4,378</td>
+                            <td><span class="status-badge paid">決済済</span></td>
+                        </tr>
+                        <tr>
+                            <td>2025/12/25</td>
+                            <td>スタンダードプラン（1月分）</td>
+                            <td>¥4,378</td>
+                            <td><span class="status-badge paid">決済済</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="download" class="backend-section">
                 <h3>テンプレート ダウンロード</h3>
-                <p class="desc">必要なファイルをダウンロードしてご利用ください。</p>
+                <p class="desc">ご契約プランで利用可能なテンプレートです。</p>
                 <div class="download-list">
                     <a href="#" class="dl-item">
-                        <span class="dl-icon">📄</span>
-                        <span class="dl-name">採用テンプレート一式.zip</span>
-                        <span class="dl-btn">ダウンロード</span>
+                        <span class="dl-icon">📁</span>
+                        <div>
+                            <span class="dl-name">採用・面接キット.zip</span>
+                            <span class="dl-meta">最終更新: 2026/01/20</span>
+                        </div>
+                        <span class="dl-btn">Download</span>
                     </a>
                     <a href="#" class="dl-item">
                         <span class="dl-icon">📊</span>
-                        <span class="dl-name">評価シート・マニュアル.zip</span>
-                        <span class="dl-btn">ダウンロード</span>
-                    </a>
-                    <a href="#" class="dl-item">
-                        <span class="dl-icon">⚖️</span>
-                        <span class="dl-name">制度・規定フォーマット.zip</span>
-                        <span class="dl-btn">ダウンロード</span>
+                        <div>
+                            <span class="dl-name">評価制度運用セット.zip</span>
+                            <span class="dl-meta">最終更新: 2026/01/15</span>
+                        </div>
+                        <span class="dl-btn">Download</span>
                     </a>
                 </div>
             </section>
 
-            <section class="backend-section">
-                <h3>アカウント情報</h3>
-                <form class="account-form">
+            <section id="contact" class="backend-section">
+                <h3>お問い合わせ</h3>
+                <form>
                     <div class="form-group">
-                        <label>会社名</label>
-                        <input type="text" value="株式会社サンプル" readonly>
+                        <label>お問い合わせ内容</label>
+                        <textarea rows="4" placeholder="ご質問やご相談をご記入ください"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label>担当者名</label>
-                        <input type="text" value="山田 太郎">
-                    </div>
-                    <div class="form-group">
-                        <label>メールアドレス</label>
-                        <input type="email" value="yamada@sample.co.jp">
-                    </div>
-                    <button type="button" class="btn-backend-primary sm">変更を保存</button>
+                    <button type="submit" class="btn-backend-primary sm">送信する</button>
                 </form>
             </section>
 
