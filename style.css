@@ -1354,3 +1354,25 @@ section {
         margin-bottom: 30px;
     }
 }
+
+
+/* =========================================
+   ▼▼ 修正：料金プラン周りの余白・重なり完全解消 ▼▼
+   ========================================= */
+
+.price-note {
+    /* 上のカードとの重なりを防ぐ（先ほどの修正） */
+    margin-top: 70px !important; 
+    
+    /* ▼▼ 今回の追加：下の「機能・サービス詳細比較」との間を広げる ▼▼ */
+    margin-bottom: 60px !important;
+    
+    position: relative;
+    z-index: 1;
+    display: block; /* ブロック要素として余白を確保 */
+}
+
+/* プラン表エリア自体の位置も微調整 */
+.comparison-area {
+    margin-top: 0 !important; /* price-note側で余白を取ったのでこちらはリセット */
+}
