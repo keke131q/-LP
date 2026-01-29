@@ -8,13 +8,12 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-/* --- ヒーローセクション（修正版：視認性アップ） --- */
+/* --- ヒーローセクション（背景画像を明るいオフィスに変更） --- */
 .hero-section {
     background-color: #29375B;
-    /* ▼▼ 変更点1：背景のネイビーの膜を少し濃くしました（0.9 → 0.92） ▼▼ */
-    /* さらに色味を深いネイビー（#1e2945）に寄せて、白い文字とのコントラストを高めています */
-    background-image: linear-gradient(rgba(30, 41, 69, 0.92), rgba(30, 41, 69, 0.92)), 
-                      url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80');
+    /* 背景画像を変更：奥行きのある明るいオフィス写真 + ネイビーの透過フィルター(0.85) */
+    background-image: linear-gradient(rgba(30, 41, 69, 0.85), rgba(30, 41, 69, 0.85)), 
+                      url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80');
     background-size: cover;
     background-position: center;
     color: #ffffff;
@@ -709,13 +708,19 @@ details[open] .faq-question::after { content: "-"; }
 }
 
 /* 最終CTA */
+/* --- 最終CTA（背景画像あり） --- */
 .final-cta-box {
     margin-top: 100px;
-    background: linear-gradient(135deg, #29375B, #1e293b);
+    /* 背景画像：整理されたデスク + 濃いネイビーのフィルター */
+    background: linear-gradient(rgba(41, 55, 91, 0.9), rgba(41, 55, 91, 0.9)), 
+                url('https://images.unsplash.com/photo-1493934558415-9d19f0b2b4d2?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
     color: #fff;
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
     border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 .final-cta-box h2 { font-size: 2rem; margin-bottom: 20px; }
 .btn-final-cta {
@@ -854,4 +859,164 @@ details[open] .faq-question::after { content: "-"; }
     .voice-card::after {
         display: none;
     }
+}
+
+
+/* --- サービス内容一覧のサムネイル装飾 --- */
+.folder-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.doc-thumbnail {
+    width: 80px;      /* 小さく配置 */
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    opacity: 0.8;
+    filter: blur(0.5px); /* わずかにぼかして「チラ見せ」感を演出 */
+    transition: 0.3s;
+    background: #fff;
+    padding: 3px;     /* 写真の周りに白いフチをつける */
+}
+
+/* マウスを乗せると少しハッキリ見える演出 */
+.template-folder:hover .doc-thumbnail {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+
+```css
+/* --- プラン比較表のデザイン --- */
+.comparison-area {
+    margin: 60px auto 80px; /* 上下の余白 */
+    max-width: 900px;
+}
+
+.comparison-title {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #29375B;
+    margin-bottom: 20px;
+}
+
+/* スマホで横スクロールさせる設定 */
+.table-scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* スマホでもこれ以上の幅を確保（スクロール発生） */
+    background: #fff;
+    font-size: 0.95rem;
+}
+
+.comparison-table th, 
+.comparison-table td {
+    padding: 15px 10px;
+    text-align: center;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+/* ヘッダーのデザイン */
+.comparison-table thead th {
+    background: #f8fafc;
+    color: #475569;
+    font-weight: bold;
+}
+
+/* 項目の列（左端） */
+.td-label {
+    text-align: left;
+    font-weight: bold;
+    color: #29375B;
+    background: #fcfcfc;
+    width: 25%;
+}
+
+/* スタンダードプラン（推奨）の列を強調 */
+.recommended {
+    background-color: #fff7ed !important; /* 薄いオレンジ背景 */
+    color: #ea580c;
+    font-weight: bold;
+    border-left: 2px solid #ffedd5;
+    border-right: 2px solid #ffedd5;
+}
+
+.th-plan.recommended {
+    background-color: #ffedd5 !important; /* ヘッダーは少し濃いオレンジ */
+    color: #c2410c;
+}
+
+.msg-gray {
+    color: #cbd5e1;
+}
+
+/* スマホ対応：文字サイズ調整 */
+@media (max-width: 768px) {
+    .comparison-table { font-size: 0.85rem; }
+    .td-label { padding-left: 10px; }
+}
+
+
+/* --- 悩みカードの画像対応（写真入りデザイン） --- */
+.problem-card {
+    background: #ffffff;
+    width: 300px;
+    padding: 0; /* 写真を端まで表示するためパディングを削除 */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-top: none; /* 以前の線を消す */
+    overflow: hidden; /* 角丸に合わせて写真を切り抜く */
+    transition: transform 0.3s;
+}
+
+.problem-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.problem-content {
+    padding: 25px 20px 40px; /* 文字部分に余白を持たせる */
+}
+
+/* 以前のアイコンスタイルを調整・無効化 */
+.card-icon { display: none; }
+
+
+/* --- 会社概要のビジュアル調整 --- */
+.company-visuals {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.building-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.company-map iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
