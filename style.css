@@ -760,3 +760,92 @@ details[open] .faq-question::after { content: "-"; }
     .flow-content-wrapper, .company-grid { flex-direction: column; }
     .price-card.recommended { transform: scale(1); } /* スマホでは拡大解除 */
 }
+
+
+```css
+/* --- 利用者の声セクションのデザイン --- */
+.voice-section {
+    background-color: #f1f5f9; /* わずかにグレーにして前後の白背景と区別 */
+    padding: 80px 20px;
+}
+
+.voice-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.voice-card {
+    background: #ffffff;
+    width: 320px; /* カード幅 */
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* 優しい影 */
+    position: relative;
+}
+
+/* 吹き出しのしっぽ（装飾） */
+.voice-card::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 15px solid #ffffff;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+}
+
+.voice-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 15px;
+}
+
+.voice-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* 丸く切り抜く */
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+}
+
+.voice-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.industry {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: bold;
+}
+
+.stars {
+    color: #eab308; /* 星の色（ゴールド） */
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+.voice-text {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.8;
+}
+
+.highlight-marker {
+    background: linear-gradient(transparent 60%, #fef08a 60%); /* 黄色のマーカー */
+    font-weight: bold;
+}
+
+/* スマホ対応：吹き出しのしっぽを消す（縦並びのときに違和感がないように） */
+@media (max-width: 768px) {
+    .voice-card::after {
+        display: none;
+    }
+}
