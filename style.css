@@ -1548,3 +1548,93 @@ section {
         font-size: 1rem;
     }
 }
+
+
+```css
+/* --- 解決フロー図解のデザイン --- */
+.solution-flow-area {
+    margin-top: 80px;
+    text-align: center; /* ★ここで全体を中央揃えにする */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 図解の箱と矢印 */
+.flow-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* スマホで折り返す */
+}
+
+.flow-box {
+    padding: 15px 30px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.box-bad {
+    background: #e2e8f0; /* グレー */
+    color: #64748b;
+}
+
+.box-main {
+    background: #29375B; /* ネイビー */
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(41, 55, 91, 0.3);
+    position: relative;
+    top: -5px; /* 真ん中だけ少し浮かせる */
+}
+
+.box-good {
+    background: #dbeafe; /* 薄いブルー */
+    color: #1e40af;
+    border: 1px solid #2563EB;
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: #94a3b8;
+}
+
+/* テキストのデザイン */
+.flow-caption {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #29375B;
+    margin-bottom: 30px;
+}
+
+.flow-divider {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 30px auto;
+    width: 100%;
+}
+
+.flow-message {
+    font-size: 1.4rem; /* 大きくして訴求 */
+    font-weight: bold;
+    line-height: 1.8;
+    color: #29375B;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .flow-diagram {
+        flex-direction: column; /* 縦並びにする */
+        gap: 10px;
+    }
+    .flow-arrow {
+        transform: rotate(90deg); /* 矢印を下向きに */
+    }
+    .flow-message {
+        font-size: 1.1rem;
+        text-align: left; /* スマホの長文は左揃えの方が読みやすい場合も（お好みでcenterのままでもOK） */
+        text-align: center; /* 今回は中央揃えで統一 */
+    }
+}
