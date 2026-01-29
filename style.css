@@ -76,3 +76,71 @@ body {
     font-size: 0.95rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+```css
+/* --- 第2セクション（課題・共感）のデザイン --- */
+.problem-section {
+    background-color: #f9fafb; /* 薄いグレーで目に優しく */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px; /* 全体の幅を制限して読みやすく */
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #29375B; /* ネイビーで引き締め */
+    margin-bottom: 50px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.text-accent {
+    color: #ef4444; /* 注意を引く赤色 */
+    background: linear-gradient(transparent 70%, #fecaca 70%); /* マーカー風の下線 */
+}
+
+/* 3つのカードを横並びにする設定 */
+.problem-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* カード間の隙間 */
+    flex-wrap: wrap; /* スマホでは縦並びにする */
+}
+
+.problem-card {
+    background: #ffffff;
+    width: 300px; /* カードの幅 */
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* 柔らかい影 */
+    transition: transform 0.3s;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px); /* マウスを乗せると少し浮く */
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.problem-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #29375B;
+    border-bottom: 2px solid #e5e7eb;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.problem-card p {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.8;
+    text-align: left;
+}
