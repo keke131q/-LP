@@ -6,12 +6,14 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    color: #333;
-    line-height: 1.6;
 }
 
 .hero-section {
-    background: #29375B; /* ネイビー背景 */
+    /* 指示通り「スマートな業務風景」の画像を採用 */
+    background-image: linear-gradient(rgba(41, 55, 91, 0.9), rgba(41, 55, 91, 0.9)), 
+                      url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
     color: #ffffff;
     padding: 100px 20px;
     text-align: center;
@@ -33,7 +35,7 @@ body {
 }
 
 .highlight {
-    color: #60a5fa; /* ライトブルー */
+    color: #60a5fa;
 }
 
 .hero-subcopy {
@@ -43,7 +45,7 @@ body {
 }
 
 .cta-button {
-    background-color: #ea580c; /* オレンジ */
+    background-color: #ea580c;
     color: #ffffff;
     padding: 18px 40px;
     font-size: 1.3rem;
@@ -51,11 +53,6 @@ body {
     text-decoration: none;
     border-radius: 8px;
     display: inline-block;
-    transition: 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #c2410c;
 }
 
 .cta-note {
@@ -74,7 +71,8 @@ body {
 
 .benefit-badge {
     background: rgba(255, 255, 255, 0.1);
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 0.9rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
