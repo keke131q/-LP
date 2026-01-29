@@ -1376,3 +1376,17 @@ section {
 .comparison-area {
     margin-top: 0 !important; /* price-note側で余白を取ったのでこちらはリセット */
 }
+
+/* =========================================
+   ▼▼ 修正：FAQの隙間を均一にする ▼▼
+   ========================================= */
+
+.faq-container {
+    display: flex;          /* フレックスボックス化 */
+    flex-direction: column; /* 縦並びにする */
+    gap: 20px !important;   /* アイテム間の隙間を20pxで強制統一 */
+}
+
+.faq-item {
+    margin-bottom: 0 !important; /* 個別の余白設定をリセット（gapに任せるため） */
+}
