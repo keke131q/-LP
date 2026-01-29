@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>マイページ | HR DOC SUITE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="backend-body-gray">
+
+    <header class="backend-header">
+        <div class="header-inner">
+            <div class="logo">HR DOC SUITE</div>
+            <div class="user-menu">
+                <span>契約中：スタンダードプラン</span>
+                <a href="index.html" class="btn-logout">ログアウト</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="mypage-container">
+        
+        <aside class="mypage-sidebar">
+            <nav>
+                <ul>
+                    <li class="active">ホーム・契約状況</li>
+                    <li>ダウンロード</li>
+                    <li>アカウント設定</li>
+                    <li>お問い合わせ</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="mypage-main">
+            
+            <section class="backend-section">
+                <h3>ご契約プラン</h3>
+                <div class="plan-status-box">
+                    <div class="status-row">
+                        <span class="label">現在のプラン</span>
+                        <span class="value highlight">スタンダードプラン</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="label">月額料金</span>
+                        <span class="value">3,980円（税込4,278円）</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="label">次回更新日</span>
+                        <span class="value">2026年2月28日</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="backend-section">
+                <h3>テンプレート ダウンロード</h3>
+                <p class="desc">必要なファイルをダウンロードしてご利用ください。</p>
+                <div class="download-list">
+                    <a href="#" class="dl-item">
+                        <span class="dl-icon">📄</span>
+                        <span class="dl-name">採用テンプレート一式.zip</span>
+                        <span class="dl-btn">ダウンロード</span>
+                    </a>
+                    <a href="#" class="dl-item">
+                        <span class="dl-icon">📊</span>
+                        <span class="dl-name">評価シート・マニュアル.zip</span>
+                        <span class="dl-btn">ダウンロード</span>
+                    </a>
+                    <a href="#" class="dl-item">
+                        <span class="dl-icon">⚖️</span>
+                        <span class="dl-name">制度・規定フォーマット.zip</span>
+                        <span class="dl-btn">ダウンロード</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="backend-section">
+                <h3>アカウント情報</h3>
+                <form class="account-form">
+                    <div class="form-group">
+                        <label>会社名</label>
+                        <input type="text" value="株式会社サンプル" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>担当者名</label>
+                        <input type="text" value="山田 太郎">
+                    </div>
+                    <div class="form-group">
+                        <label>メールアドレス</label>
+                        <input type="email" value="yamada@sample.co.jp">
+                    </div>
+                    <button type="button" class="btn-backend-primary sm">変更を保存</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

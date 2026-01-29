@@ -1069,3 +1069,208 @@ details[open] .faq-question::after { content: "-"; }
         font-size: 1rem;
     }
 }
+
+/* --- バックエンド（ログイン・マイページ）用スタイル --- */
+
+/* 共通設定 */
+.backend-body {
+    background: #f1f5f9;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backend-body-gray {
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+/* ログイン画面 */
+.backend-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.backend-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.backend-logo {
+    font-size: 1.2rem;
+    color: #29375B;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.backend-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-backend-primary {
+    width: 100%;
+    background: #ea580c;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-backend-primary:hover { background: #c2410c; }
+.btn-backend-primary.sm { width: auto; padding: 10px 30px; }
+
+.backend-links {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+}
+.backend-links a { color: #29375B; text-decoration: none; }
+
+.backend-footer { margin-top: 30px; font-size: 0.85rem; }
+.backend-footer a { color: #94a3b8; text-decoration: none; }
+
+
+/* マイページ */
+.backend-header {
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 15px 0;
+}
+
+.header-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-inner .logo { font-weight: bold; color: #29375B; }
+.user-menu { font-size: 0.9rem; color: #64748b; }
+.btn-logout { margin-left: 15px; color: #ea580c; text-decoration: none; }
+
+.mypage-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* サイドバー */
+.mypage-sidebar {
+    width: 250px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.mypage-sidebar ul { list-style: none; padding: 0; margin: 0; }
+.mypage-sidebar li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #64748b;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+.mypage-sidebar li:hover { background: #f8fafc; }
+.mypage-sidebar li.active {
+    background: #e0f2fe;
+    color: #0284c7;
+    font-weight: bold;
+    border-left: 4px solid #0284c7;
+}
+
+/* メインエリア */
+.mypage-main { flex: 1; }
+
+.backend-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.backend-section h3 {
+    font-size: 1.1rem;
+    color: #29375B;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f1f5f9;
+}
+.desc { font-size: 0.9rem; color: #64748b; margin-bottom: 20px; }
+
+/* 契約プラン表示 */
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95rem;
+}
+.status-row .label { color: #64748b; }
+.status-row .value { font-weight: bold; color: #333; }
+.status-row .value.highlight { color: #ea580c; }
+
+/* ダウンロードリスト */
+.download-list { display: flex; flex-direction: column; gap: 15px; }
+.dl-item {
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #e2e8f0;
+    transition: 0.2s;
+}
+.dl-item:hover { border-color: #cbd5e1; background: #fff; }
+.dl-icon { font-size: 1.5rem; margin-right: 15px; }
+.dl-name { flex: 1; font-weight: bold; font-size: 0.95rem; }
+.dl-btn {
+    background: #29375B;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 6px 15px;
+    border-radius: 4px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .mypage-container { flex-direction: column; }
+    .mypage-sidebar { width: 100%; margin-bottom: 20px; }
+}
