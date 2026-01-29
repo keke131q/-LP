@@ -80,67 +80,148 @@ body {
 ```css
 /* --- 第2セクション（課題・共感）のデザイン --- */
 .problem-section {
-    background-color: #f9fafb; /* 薄いグレーで目に優しく */
-    padding: 80px 20px;
+    background-color: #f9fafb; /* 白に近いグレーで清潔感 */
+    padding: 100px 20px;
     text-align: center;
 }
 
 .container {
-    max-width: 1000px; /* 全体の幅を制限して読みやすく */
+    max-width: 1000px;
     margin: 0 auto;
 }
 
+/* タイトル周り */
 .section-title {
     font-size: 2rem;
-    color: #29375B; /* ネイビーで引き締め */
-    margin-bottom: 50px;
-    font-weight: bold;
-    line-height: 1.5;
+    color: #29375B; /* ネイビー */
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.section-lead {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 60px;
+    line-height: 1.8;
 }
 
 .text-accent {
-    color: #ef4444; /* 注意を引く赤色 */
-    background: linear-gradient(transparent 70%, #fecaca 70%); /* マーカー風の下線 */
+    color: #ef4444; /* 赤文字 */
+    font-weight: bold;
+    background: linear-gradient(transparent 60%, #fecaca 60%); /* マーカー線 */
 }
 
-/* 3つのカードを横並びにする設定 */
+/* 課題カード（数字強調デザイン） */
 .problem-grid {
     display: flex;
     justify-content: center;
-    gap: 30px; /* カード間の隙間 */
-    flex-wrap: wrap; /* スマホでは縦並びにする */
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
 }
 
 .problem-card {
     background: #ffffff;
-    width: 300px; /* カードの幅 */
-    padding: 40px 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* 柔らかい影 */
+    width: 300px;
+    padding: 40px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #29375B; /* 上部にネイビーのアクセント */
     transition: transform 0.3s;
 }
 
 .problem-card:hover {
-    transform: translateY(-5px); /* マウスを乗せると少し浮く */
+    transform: translateY(-5px);
 }
 
 .card-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
 }
 
 .problem-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 15px;
+    font-size: 1.2rem;
     color: #29375B;
-    border-bottom: 2px solid #e5e7eb;
-    display: inline-block;
-    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
-.problem-card p {
+.problem-text {
     font-size: 0.95rem;
     color: #4b5563;
     line-height: 1.8;
-    text-align: left;
+}
+
+.highlight-number {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ea580c; /* オレンジで数字を強調 */
+    margin-bottom: 5px;
+}
+
+/* 解決へのフロー図（How） */
+.solution-flow-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.flow-box {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.flow-box.bad {
+    background: #e5e7eb;
+    color: #6b7280;
+    text-decoration: line-through; /* 打ち消し線 */
+}
+
+.flow-box.main {
+    background: #29375B;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(41, 55, 91, 0.3);
+}
+
+.flow-box.good {
+    background: #dbeafe; /* 薄い青 */
+    color: #1e40af;
+    border: 2px solid #29375B;
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: #9ca3af;
+}
+
+.flow-caption {
+    font-size: 1rem;
+    color: #29375B;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+/* 最後のメッセージ（Now） */
+.section-closing p {
+    font-size: 1.2rem;
+    color: #29375B;
+    font-weight: bold;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    display: inline-block;
+    padding: 20px 40px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .sp-br { display: block; } /* スマホで改行 */
+    .solution-flow-area { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); } /* 矢印を下に向ける */
 }
