@@ -1,0 +1,96 @@
+/* --- 基本設定 --- */
+:root {
+    --navy: #29375B;    [cite_start]/* コーポレートネイビー [cite: 86] */
+    --accent: #ea580c;  [cite_start]/* アクセントオレンジ [cite: 94] */
+    --light-blue: #60a5fa; /* 強調用ライトブルー */
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif; [cite_start]/* 指定フォント [cite: 97, 100] */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- ヒーローセクションのデザイン --- */
+.hero-section {
+    [cite_start]/* 落ち着いたネイビーを基調としたビジネスライクな配色 [cite: 70, 86] */
+    background: linear-gradient(rgba(41, 55, 91, 0.92), rgba(41, 55, 91, 0.92)), url('https://images.unsplash.com/photo-1454165833767-027508496b4c?auto=format&fit=crop&w=1200&q=80'); 
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 120px 0; [cite_start]/* 上下にゆとりを持たせたレイアウト [cite: 110] */
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: 2.5rem; [cite_start]/* 見出しを大きく強調 [cite: 109, 136] */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--light-blue);
+    display: block;
+    margin-top: 10px;
+}
+
+.hero-subcopy {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+[cite_start]/* CTAボタンの設定 [cite: 92, 93, 160] */
+.cta-button {
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 18px 45px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background-color: #c2410c;
+}
+
+.cta-note {
+    font-size: 0.85rem;
+    margin-top: 12px;
+    opacity: 0.7;
+}
+
+[cite_start]/* メリットバッジの設定 [cite: 153, 194] */
+.hero-benefits {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.benefit-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+}
