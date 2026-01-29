@@ -1020,3 +1020,52 @@ details[open] .faq-question::after { content: "-"; }
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+
+/* --- 最終CTAのボタン追加対応 --- */
+.cta-button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap; /* スマホで縦並びにする */
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* メインボタンの余白調整（グループ化したのでリセット） */
+.btn-final-cta {
+    margin: 0 !important; /* 以前のマージンを打ち消し */
+}
+
+/* サブボタン（枠線のみ）のデザイン */
+.btn-final-cta-sub {
+    display: inline-block;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem; /* メインより少し控えめでもOKですが、あえて同等に */
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-final-cta-sub:hover {
+    background: #ffffff;
+    color: #29375B; /* ホバー時にネイビー文字に */
+}
+
+/* スマホ対応：ボタンを縦に並べた時の調整 */
+@media (max-width: 768px) {
+    .cta-button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn-final-cta, .btn-final-cta-sub {
+        width: 100%; /* スマホでは幅いっぱいに */
+        max-width: 350px;
+        text-align: center;
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+}
