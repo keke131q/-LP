@@ -1444,3 +1444,107 @@ section {
     .dl-item { flex-direction: column; align-items: flex-start; gap: 10px; }
     .dl-btn { width: 100%; text-align: center; margin: 0; }
 }
+
+```css
+/* --- オプションメニューのデザイン --- */
+.option-section {
+    margin: 0 auto 100px; /* 下に余白を設けてFAQと区切る */
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.option-title {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #29375B;
+    margin-bottom: 30px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* タイトルの装飾（上下に短い線） */
+.option-title::before, .option-title::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #e2e8f0;
+    margin: 10px auto;
+}
+
+.option-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    transition: 0.3s;
+}
+
+.option-item:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.opt-icon {
+    font-size: 1.5rem;
+    margin-right: 20px;
+    background: #f1f5f9;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.opt-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap; /* スマホで折り返す */
+}
+
+.opt-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
+    margin-right: 15px;
+}
+
+.opt-price {
+    font-weight: bold;
+    color: #ea580c; /* オレンジで強調 */
+    font-size: 1.1rem;
+}
+
+.opt-tax {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-weight: normal;
+}
+
+/* スマホ対応：価格を右寄せから左寄せ（改行）に変更 */
+@media (max-width: 600px) {
+    .opt-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .opt-price {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+}
