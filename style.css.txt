@@ -1,133 +1,96 @@
+/* --- 基本設定 --- */
 :root {
-    --primary: #005E9E; /* Trust Blue */
-    --navy: #29375B;    /* Corporate Navy */
-    --bg-light: #f9fafb;
-    --text-dark: #111827;
+    --navy: #29375B;    [cite_start]/* コーポレートネイビー [cite: 86] */
+    --accent: #ea580c;  [cite_start]/* アクセントオレンジ [cite: 94] */
+    --light-blue: #60a5fa; /* 強調用ライトブルー */
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif; [cite_start]/* 指定フォント [cite: 97, 100] */
+    color: #333;
     line-height: 1.6;
-    color: var(--text-dark);
-    margin: 0;
 }
 
-.container {
+/* --- ヒーローセクションのデザイン --- */
+.hero-section {
+    [cite_start]/* 落ち着いたネイビーを基調としたビジネスライクな配色 [cite: 70, 86] */
+    background: linear-gradient(rgba(41, 55, 91, 0.92), rgba(41, 55, 91, 0.92)), url('https://images.unsplash.com/photo-1454165833767-027508496b4c?auto=format&fit=crop&w=1200&q=80'); 
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 120px 0; [cite_start]/* 上下にゆとりを持たせたレイアウト [cite: 110] */
+    text-align: center;
+}
+
+.hero-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header */
-header {
-    background: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
+.hero-title {
+    font-size: 2.5rem; [cite_start]/* 見出しを大きく強調 [cite: 109, 136] */
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.highlight {
+    color: var(--light-blue);
+    display: block;
+    margin-top: 10px;
 }
 
-.logo {
+.hero-subcopy {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+[cite_start]/* CTAボタンの設定 [cite: 92, 93, 160] */
+.cta-button {
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 18px 45px;
+    font-size: 1.25rem;
     font-weight: bold;
-    font-size: 1.5rem;
-    color: var(--navy);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.btn-login {
-    background: var(--navy);
-    color: #fff !important;
-    padding: 8px 20px;
-    border-radius: 5px;
     text-decoration: none;
-}
-
-/* Hero */
-.hero {
-    background: linear-gradient(rgba(41, 55, 91, 0.9), rgba(41, 55, 91, 0.9)), url('hero-bg.jpg'); /* 写真は任意 */
-    background-size: cover;
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
-}
-
-.hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
-.hero h1 span { color: #60a5fa; }
-.hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
-
-.btn-primary {
-    background: #ea580c; /* Orange Accent */
-    color: #fff;
-    padding: 15px 40px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
+    border-radius: 8px;
     display: inline-block;
+    box-shadow: 0 4px 15px rgba(234, 88, 12, 0.3);
+    transition: 0.3s;
 }
 
-.hero-badges {
-    margin-top: 40px;
+.cta-button:hover {
+    transform: translateY(-3px);
+    background-color: #c2410c;
+}
+
+.cta-note {
+    font-size: 0.85rem;
+    margin-top: 12px;
+    opacity: 0.7;
+}
+
+[cite_start]/* メリットバッジの設定 [cite: 153, 194] */
+.hero-benefits {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     gap: 20px;
-    font-size: 0.9rem;
+    flex-wrap: wrap;
 }
 
-/* Price Section */
-.price { background: var(--bg-light); padding: 80px 0; }
-.section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; }
-
-.price-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    align-items: center;
+.benefit-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.95rem;
 }
-
-.price-card {
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    text-align: center;
-}
-
-.price-card.featured {
-    border: 3px solid var(--primary);
-    transform: scale(1.05);
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--primary);
-    color: #fff;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-}
-
-.amount { font-size: 2rem; font-weight: bold; margin: 20px 0; color: var(--navy); }
-.amount span { font-size: 1rem; }
-
-.price-card ul { list-style: none; padding: 0; margin-bottom: 30px; text-align: left; }
-.price-card li { margin-bottom: 10px; border-bottom: 1px solid #f3f4f6; padding-bottom: 5px; }
-
-/* Footer */
-footer { background: #111827; color: #fff; padding: 60px 0 20px; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-bottom: 40px; }
-.copyright { text-align: center; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid #374151; padding-top: 20px; }
