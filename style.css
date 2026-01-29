@@ -1274,3 +1274,83 @@ details[open] .faq-question::after { content: "-"; }
     .mypage-container { flex-direction: column; }
     .mypage-sidebar { width: 100%; margin-bottom: 20px; }
 }
+
+/* =========================================
+   ▼▼ 最終仕上げ：余白と文字サイズの統一修正 ▼▼
+   ========================================= */
+
+/* 1. 全体の文字サイズと行間をゆったりさせる */
+body {
+    font-size: 16px;       /* 16pxが現代の標準（小さいと読みづらい） */
+    line-height: 1.8;      /* 行間を広げて「プロっぽさ」を出す */
+    letter-spacing: 0.05em; /* 文字間を少しだけ空けて上品に */
+    color: #333;           /* 真っ黒(#000)より少しグレー寄りが目に優しい */
+}
+
+/* 2. セクションの上下余白を「100px」に統一する */
+/* これにより「バラバラな感じ」が消え、一定のリズムが生まれます */
+section {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+/* 3. 図と文字の重なり・窮屈さの解消 */
+
+/* (A) 悩みカード（写真と文字のバランス） */
+.problem-card {
+    height: 100%; /* 高さを揃える */
+    display: flex;
+    flex-direction: column;
+}
+.problem-content {
+    padding: 30px 25px; /* 文字周りの余白を増やす */
+    flex: 1; /* 内容量に関わらず高さを合わせる */
+}
+.problem-card h3 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 1.3rem; /* タイトルを少し大きく */
+}
+
+/* (B) サービス一覧（フォルダ）の調整 */
+.template-folder {
+    margin-top: 40px; /* 上の「タブ」がはみ出しても大丈夫なように隙間を確保 */
+    padding: 40px 30px; /* 内側の余白を広げる */
+}
+.folder-header {
+    margin-bottom: 25px; /* アイコン・写真とタイトルの間を広げる */
+}
+.template-list li {
+    margin-bottom: 12px; /* リストの間隔を広げる */
+    font-size: 1rem;
+}
+
+/* (C) 料金プランの調整 */
+.price-card {
+    padding: 50px 30px; /* カード内を広々と */
+}
+.price-features li {
+    padding: 15px 0; /* 線と文字の間隔を広げる */
+}
+
+/* (D) 利用の流れ（文字と図の距離） */
+.step-card {
+    margin-bottom: 40px; /* ステップ間の距離を広げる */
+}
+.step-text h3 {
+    margin-bottom: 12px;
+}
+
+/* 4. スマホ表示の最適化（余白を少し縮める） */
+@media (max-width: 768px) {
+    section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+    .hero-title {
+        font-size: 1.8rem; /* スマホではタイトルを少し小さく */
+    }
+    .price-card {
+        margin-bottom: 30px;
+    }
+}
